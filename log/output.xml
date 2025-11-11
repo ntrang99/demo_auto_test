@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-17T22:37:36.030155" rpa="false" schemaversion="5">
+<suite id="s1" name="Try Excep" source="D:\autoTest\demoblazer\.venv\test\try_excep.robot">
+<test id="s1-t1" name="Mo trinh duyet chrome" line="4">
+<try>
+<branch type="TRY">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-17T22:37:36.738491" level="INFO">Opening browser 'chrome' to base url 'https://example.com'.</msg>
+<arg>https://example.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-17T22:37:36.737949" elapsed="3.646538"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Da mo trinh duyet chrome thanh cong</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-09-17T22:37:40.385338" elapsed="0.001017"/>
+</kw>
+<status status="PASS" start="2025-09-17T22:37:36.736578" elapsed="3.650181"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Loi khi mo trinh duyet chrome - kiem tra lai driver hoac cau hinh</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-09-17T22:37:40.387702" elapsed="0.000271"/>
+</kw>
+<status status="NOT RUN" start="2025-09-17T22:37:40.387134" elapsed="0.001094"/>
+</branch>
+<branch type="ELSE">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-09-17T22:37:40.403132" level="INFO">Page title is 'Example Domain'.</msg>
+<arg>Example Domain</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-09-17T22:37:40.389510" elapsed="0.014182"/>
+</kw>
+<msg time="2025-09-17T22:37:40.404237" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Title Should Be</arg>
+<arg>Example Domain</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-09-17T22:37:40.388965" elapsed="0.015516"/>
+</kw>
+<if>
+<branch type="IF" condition="${status}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Dung tieu de</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-09-17T22:37:40.405992" elapsed="0.001102"/>
+</kw>
+<status status="PASS" start="2025-09-17T22:37:40.405184" elapsed="0.002264"/>
+</branch>
+<status status="PASS" start="2025-09-17T22:37:40.404875" elapsed="0.002827"/>
+</if>
+<status status="PASS" start="2025-09-17T22:37:40.388583" elapsed="0.019198"/>
+</branch>
+<status status="PASS" start="2025-09-17T22:37:36.736273" elapsed="3.671682"/>
+</try>
+<status status="PASS" start="2025-09-17T22:37:36.735689" elapsed="3.672534"/>
+</test>
+<status status="PASS" start="2025-09-17T22:37:36.048713" elapsed="4.361133"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Try Excep" id="s1" pass="1" fail="0" skip="0">Try Excep</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
