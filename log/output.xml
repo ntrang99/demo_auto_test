@@ -1,75 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-17T22:37:36.030155" rpa="false" schemaversion="5">
-<suite id="s1" name="Try Excep" source="D:\autoTest\demoblazer\.venv\test\try_excep.robot">
-<test id="s1-t1" name="Mo trinh duyet chrome" line="4">
-<try>
-<branch type="TRY">
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-11-18T22:09:19.872637" rpa="false" schemaversion="5">
+<suite id="s1" name="Demoblazer" source="D:\autoTest\demoblazer\test\demoblazer.robot">
+<test id="s1-t1" name="Login_Demoblazer" line="18">
+<kw name="Login Demoblazer">
+<kw name="Open demoblazer">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-09-17T22:37:36.738491" level="INFO">Opening browser 'chrome' to base url 'https://example.com'.</msg>
-<arg>https://example.com</arg>
-<arg>chrome</arg>
+<msg time="2025-11-18T22:09:21.084080" level="INFO">Opening browser 'chrome' to base url 'https://demoblaze.com/'.</msg>
+<msg time="2025-11-18T22:09:23.996442" level="WARN">The chromedriver version (140.0.7339.80) detected in PATH at D:\autoTest\bin\chromedriver.exe might not be compatible with the detected chrome version (141.0.7390.123); currently, chromedriver 141.0.7390.122 is recommended for chrome 141.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-09-17T22:37:36.737949" elapsed="3.646538"/>
+<status status="PASS" start="2025-11-18T22:09:21.083725" elapsed="6.370174"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Da mo trinh duyet chrome thanh cong</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-17T22:37:40.385338" elapsed="0.001017"/>
+<arg>${browser}</arg>
+<status status="PASS" start="2025-11-18T22:09:21.082824" elapsed="6.371536"/>
 </kw>
-<status status="PASS" start="2025-09-17T22:37:36.736578" elapsed="3.650181"/>
-</branch>
-<branch type="EXCEPT">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Loi khi mo trinh duyet chrome - kiem tra lai driver hoac cau hinh</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-17T22:37:40.387702" elapsed="0.000271"/>
+<kw name="Fill login form">
+<kw name="Common - Click element">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-18T22:09:27.456015" elapsed="0.090585"/>
 </kw>
-<status status="NOT RUN" start="2025-09-17T22:37:40.387134" elapsed="0.001094"/>
-</branch>
-<branch type="ELSE">
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-09-17T22:37:40.403132" level="INFO">Page title is 'Example Domain'.</msg>
-<arg>Example Domain</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-09-17T22:37:40.389510" elapsed="0.014182"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-18T22:09:27.547271" level="INFO">Clicking element 'id=login2'.</msg>
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T22:09:27.546899" elapsed="0.085206"/>
 </kw>
-<msg time="2025-09-17T22:37:40.404237" level="INFO">${status} = True</msg>
-<var>${status}</var>
-<arg>Title Should Be</arg>
-<arg>Example Domain</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-17T22:37:40.388965" elapsed="0.015516"/>
+<arg>${btn_login}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2025-11-18T22:09:27.455613" elapsed="0.176758"/>
 </kw>
-<if>
-<branch type="IF" condition="${status}">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Dung tieu de</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-17T22:37:40.405992" elapsed="0.001102"/>
+<kw name="Common - Input text">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-18T22:09:27.633323" elapsed="0.237884"/>
 </kw>
-<status status="PASS" start="2025-09-17T22:37:40.405184" elapsed="0.002264"/>
-</branch>
-<status status="PASS" start="2025-09-17T22:37:40.404875" elapsed="0.002827"/>
-</if>
-<status status="PASS" start="2025-09-17T22:37:40.388583" elapsed="0.019198"/>
-</branch>
-<status status="PASS" start="2025-09-17T22:37:36.736273" elapsed="3.671682"/>
-</try>
-<status status="PASS" start="2025-09-17T22:37:36.735689" elapsed="3.672534"/>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T22:09:27.871522" elapsed="0.045365"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-18T22:09:27.917718" level="INFO">Typing text 'admin' into text field 'id=loginusername'.</msg>
+<arg>${element}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T22:09:27.917225" elapsed="0.130348"/>
+</kw>
+<arg>${input_username}</arg>
+<arg>${username}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2025-11-18T22:09:27.632658" elapsed="0.415286"/>
+</kw>
+<kw name="Common - Input text">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-18T22:09:28.049100" elapsed="0.022369"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T22:09:28.071711" elapsed="0.041826"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-18T22:09:28.114890" level="INFO">Typing text 'admin' into text field 'id=loginpassword'.</msg>
+<arg>${element}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T22:09:28.114114" elapsed="0.154265"/>
+</kw>
+<arg>${input_password}</arg>
+<arg>${password}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2025-11-18T22:09:28.048298" elapsed="0.220410"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-11-18T22:09:27.454894" elapsed="0.813962"/>
+</kw>
+<kw name="Submit Login form">
+<kw name="Common - Click element">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-18T22:09:28.270293" elapsed="0.032004"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-18T22:09:28.302853" level="INFO">Clicking element 'Xpath=//button[text()='Log in']'.</msg>
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T22:09:28.302561" elapsed="0.068190"/>
+</kw>
+<arg>${btn_login_form}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2025-11-18T22:09:28.269738" elapsed="0.101297"/>
+</kw>
+<status status="PASS" start="2025-11-18T22:09:28.269154" elapsed="0.102037"/>
+</kw>
+<kw name="Verify Login success">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${product_detail}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-18T22:09:28.371980" elapsed="0.026482"/>
+</kw>
+<status status="PASS" start="2025-11-18T22:09:28.371474" elapsed="0.027234"/>
+</kw>
+<arg>${web_browser}</arg>
+<arg>${username_login}</arg>
+<arg>${password_login}</arg>
+<status status="PASS" start="2025-11-18T22:09:21.081834" elapsed="7.316995"/>
+</kw>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-11-18T22:09:28.399038" elapsed="0.342137"/>
+</kw>
+<kw name="Choose product">
+<kw name="Common - Click element">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-18T22:09:28.742950" elapsed="0.291208"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-18T22:09:29.035433" level="INFO">Clicking element 'Xpath=//a[text()='Samsung galaxy s6']'.</msg>
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T22:09:29.034810" elapsed="0.758703"/>
+</kw>
+<arg>${product}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2025-11-18T22:09:28.742150" elapsed="1.052742"/>
+</kw>
+<arg>${product_detail}</arg>
+<status status="PASS" start="2025-11-18T22:09:28.741631" elapsed="1.053942"/>
+</kw>
+<tag>login</tag>
+<status status="PASS" start="2025-11-18T22:09:21.080618" elapsed="8.716331"/>
 </test>
-<status status="PASS" start="2025-09-17T22:37:36.048713" elapsed="4.361133"/>
+<status status="PASS" start="2025-11-18T22:09:19.930398" elapsed="9.868748"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">login</stat>
 </tag>
 <suite>
-<stat name="Try Excep" id="s1" pass="1" fail="0" skip="0">Try Excep</stat>
+<stat name="Demoblazer" id="s1" pass="1" fail="0" skip="0">Demoblazer</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-11-18T22:09:23.996442" level="WARN">The chromedriver version (140.0.7339.80) detected in PATH at D:\autoTest\bin\chromedriver.exe might not be compatible with the detected chrome version (141.0.7390.123); currently, chromedriver 141.0.7390.122 is recommended for chrome 141.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>
